@@ -11,6 +11,7 @@ const ValueEditor = (props) => {
   return (
     <input type="text"
            value={value}
+           className="form-control"
            onChange={e=>handleOnChange(e.target.value)} />
   );
 };
