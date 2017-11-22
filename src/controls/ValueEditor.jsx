@@ -19,7 +19,7 @@ const ValueEditor = (props) => {
 ValueEditor.displayName = 'ValueEditor';
 
 ValueEditor.propTypes = {
-  id: PropsTyoes.string,
+  id: PropTypes.string,
   field: PropTypes.string,
   operator: PropTypes.string,
   value: PropTypes.string,

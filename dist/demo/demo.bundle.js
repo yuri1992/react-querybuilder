@@ -16650,7 +16650,7 @@ var ValueEditor = function ValueEditor(props) {
 ValueEditor.displayName = 'ValueEditor';
 
 ValueEditor.propTypes = {
-  id: PropsTyoes.string,
+  id: _propTypes2.default.string,
   field: _propTypes2.default.string,
   operator: _propTypes2.default.string,
   value: _propTypes2.default.string,
@@ -16707,7 +16707,7 @@ var ValueSelector = function ValueSelector(props) {
 ValueSelector.displayName = 'ValueSelector';
 
 ValueSelector.propTypes = {
-  id: PropsTyoes.string,
+  id: _propTypes2.default.string,
   value: _propTypes2.default.string,
   options: _propTypes2.default.array.isRequired,
   className: _propTypes2.default.string,
