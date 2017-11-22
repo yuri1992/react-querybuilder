@@ -5439,6 +5439,7 @@ var Rule = function (_React$Component) {
     key: "render",
     value: function render() {
       var _props = this.props,
+          id = _props.id,
           field = _props.field,
           operator = _props.operator,
           value = _props.value,
@@ -5476,6 +5477,7 @@ var Rule = function (_React$Component) {
           "div",
           { className: "rule-filter-container" },
           _react2.default.createElement(controls.fieldSelector, {
+            id: id,
             options: fields,
             value: field,
             className: "rule-fields " + classNames.fields,
@@ -5487,6 +5489,7 @@ var Rule = function (_React$Component) {
           "div",
           { className: "rule-operator-container" },
           _react2.default.createElement(controls.operatorSelector, {
+            id: id,
             field: field,
             options: getOperators(field),
             value: operator,
@@ -5499,6 +5502,7 @@ var Rule = function (_React$Component) {
           "div",
           { className: "rule-value-container" },
           _react2.default.createElement(controls.valueEditor, {
+            id: id,
             field: field,
             operator: operator,
             value: value,
@@ -5611,6 +5615,7 @@ var ValueEditor = function ValueEditor(props) {
 ValueEditor.displayName = 'ValueEditor';
 
 ValueEditor.propTypes = {
+  id: PropsTyoes.string,
   field: _propTypes2.default.string,
   operator: _propTypes2.default.string,
   value: _propTypes2.default.string,
@@ -5667,6 +5672,7 @@ var ValueSelector = function ValueSelector(props) {
 ValueSelector.displayName = 'ValueSelector';
 
 ValueSelector.propTypes = {
+  id: PropsTyoes.string,
   value: _propTypes2.default.string,
   options: _propTypes2.default.array.isRequired,
   className: _propTypes2.default.string,
