@@ -22,6 +22,7 @@ const ValueSelector = (props) => {
 ValueSelector.displayName = 'ValueSelector';
 
 ValueSelector.propTypes = {
+  id: PropsTyoes.string,
   value: PropTypes.string,
   options: PropTypes.array.isRequired,
   className: PropTypes.string,
