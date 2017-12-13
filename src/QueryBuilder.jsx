@@ -136,6 +136,17 @@ export default class QueryBuilder extends React.Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+
+        if (nextProps.query === null) {
+            this.setState({root:this.getInitialQuery()})
+        } else if (nextProps.query !== this.state.root) {
+            this.setState({root:nextProps.query})
+        }
+
+    }
+
     getInitialQuery() {
         return this.props.query || this.createRuleGroup();
     }
@@ -232,17 +243,17 @@ export default class QueryBuilder extends React.Component {
         parent.rules.splice(index, 1);
         this.setState({root: this.state.root});
     }
-    
+
     getLevel(id) {
         return this._getLevel(id, 0, this.state.root)
     }
-    
+
     _getLevel(id, index, root) {
         const {isRuleGroup} = this.state.schema;
-        
+
         var foundAtIndex = -1;
         if(root.id === id ) {
-            foundAtIndex = index; 
+            foundAtIndex = index;
         } else if(isRuleGroup(root)) {
             root.rules.forEach(rule => {
                 if(foundAtIndex === -1) {
@@ -254,7 +265,7 @@ export default class QueryBuilder extends React.Component {
             });
         }
         return foundAtIndex;
-       
+
     }
 
     _findRule(id, parent) {

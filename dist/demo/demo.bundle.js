@@ -11598,6 +11598,17 @@ var QueryBuilder = function (_React$Component) {
             });
         }
     }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            console.log(nextProps);
+
+            if (nextProps.query === null) {
+                this.setState({ root: this.getInitialQuery() });
+            } else if (nextProps.query !== this.state.root) {
+                this.setState({ root: nextProps.query });
+            }
+        }
+    }, {
         key: 'getInitialQuery',
         value: function getInitialQuery() {
             return this.props.query || this.createRuleGroup();
